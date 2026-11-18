@@ -1,0 +1,9 @@
+{
+  // Site Seven Days : 100 % statique, servi par Cloudflare Workers (Static Assets).
+  // Aucun build : tout ce qui est dans ./public est mis en ligne tel quel.
+  "name": "seven-days",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public"
+  }
+}

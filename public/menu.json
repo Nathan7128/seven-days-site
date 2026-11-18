@@ -1,0 +1,200 @@
+{
+  "_lisezmoi": "Carte du Seven Days. Pour changer un prix : modifier le nombre après \"price\" (point décimal : 7.5 = 7,50 €). Pour retirer un produit : supprimer son bloc { ... }. Les photos sont dans le dossier img/.",
+  "updated": "2026-11-18",
+  "groups": {
+    "viandes": {
+      "type": "pick", "label": "Viande", "short": "Viande", "min": 1, "max": 1,
+      "choices": ["Viande hachée", "Escalope", "Kebab", "Kefta", "Chicken", "Tenders", "Nuggets", "Cordon bleu", "Steak", "Merguez"]
+    },
+    "sauces": {
+      "type": "pick", "label": "Sauces", "short": "Sauces", "hint": "Jusqu'à 2", "min": 0, "max": 2,
+      "choices": ["Algérienne", "Andalouse", "Blanche", "Barbecue", "Cheesy", "Curry", "Harissa", "Ketchup", "Mayonnaise", "Moutarde", "Samouraï"]
+    },
+    "supplements": {
+      "type": "pick", "label": "Suppléments", "short": "Suppl.", "min": 0, "max": 9,
+      "choices": [
+        { "label": "Bacon", "price": 1.5 }, { "label": "Mozza", "price": 1.5 }, { "label": "Viande", "price": 2.5 },
+        { "label": "Œuf", "price": 1 }, { "label": "Cheddar", "price": 1 }, { "label": "Chèvre", "price": 1 },
+        { "label": "Raclette", "price": 1.5 }, { "label": "Miel", "price": 1 }, { "label": "Galette p. de terre", "price": 1.5 }
+      ]
+    },
+    "gratine": {
+      "type": "toggle", "label": "Gratiner mon tacos", "short": "Gratiné",
+      "priceBy": { "M": 1.5, "L": 2, "XL": 2.5, "XXL": 2.5 }
+    },
+    "menu": {
+      "type": "toggle", "label": "En menu : + une boisson", "short": "Menu + boisson", "price": 1.5
+    },
+    "pain": {
+      "type": "pick", "label": "Pain", "short": "Pain", "min": 1, "max": 1, "preselect": true,
+      "choices": ["Pain maison", "Tortilla"]
+    },
+    "base": {
+      "type": "pick", "label": "Base", "short": "Base", "min": 1, "max": 1, "preselect": true,
+      "choices": ["Tomate", "Crème"]
+    }
+  },
+  "categories": [
+    {
+      "id": "tacos", "name": "Tacos lyonnais", "note": "Servi avec frites",
+      "items": [
+        {
+          "id": "tacos", "name": "Tacos lyonnais", "img": "tacos",
+          "desc": "Tu choisis la taille, les viandes, les sauces et les suppléments. Gratiné en option.",
+          "variants": { "label": "Taille", "choices": [
+            { "id": "M", "label": "M · 1 viande", "price": 8.5 },
+            { "id": "L", "label": "L · 2 viandes", "price": 10.5 },
+            { "id": "XL", "label": "XL · 3 viandes", "price": 12.5 },
+            { "id": "XXL", "label": "XXL · 4 viandes", "price": 14.5 }
+          ]},
+          "opts": [
+            { "use": "viandes", "type": "count", "label": "Viandes", "short": "Viandes", "total": { "M": 1, "L": 2, "XL": 3, "XXL": 4 } },
+            "sauces", "supplements", "gratine", "menu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crousty", "name": "Crousty", "note": "Nouveau",
+      "items": [
+        {
+          "id": "crousty", "name": "Crousty tenders", "img": "crousty", "badge": "Nouveau",
+          "desc": "Riz blanc, sauce fromagère maison, tenders, sauce chili-thaï, oignons crispy, persil.",
+          "variants": { "label": "Format", "choices": [
+            { "id": "moyen", "label": "Moyen", "price": 6 },
+            { "id": "grand", "label": "Grand", "price": 9 }
+          ]},
+          "opts": []
+        }
+      ]
+    },
+    {
+      "id": "burgers", "name": "Burgers", "note": "Servis avec frites · menu + 1,50 €",
+      "opts": ["menu"],
+      "items": [
+        { "id": "b-cheese", "name": "Cheese", "price": 6.5, "img": "cheese", "desc": "Steak haché 80 g, cheddar fondu." },
+        { "id": "b-double", "name": "Double Cheese", "price": 7.5, "img": "doublecheese", "desc": "2 steaks hachés 80 g, cheddar fondu." },
+        { "id": "b-raclette", "name": "Raclette", "price": 7, "img": "raclette", "desc": "Steak haché, fromage à raclette." },
+        { "id": "b-chicken", "name": "Chicken", "price": 6.5, "img": "chicken", "desc": "Poulet pané, cheddar fondu." },
+        { "id": "b-fish", "name": "Fish Burger", "price": 6.5, "img": "fish", "desc": "Poisson pané, cheddar fondu." },
+        { "id": "b-chevre", "name": "Chèvre-Miel", "price": 7, "img": "chevremiel", "desc": "Steak haché, chèvre, miel." }
+      ]
+    },
+    {
+      "id": "sandwichs", "name": "Sandwichs", "note": "Servis avec frites · pain maison ou tortilla · menu + 1,50 €",
+      "opts": ["pain", "sauces", "menu"],
+      "items": [
+        { "id": "s-kebab", "name": "Kebab", "price": 7.5, "img": "sandwich" },
+        { "id": "s-merguez", "name": "Merguez", "price": 7.5, "img": "sandwich" },
+        { "id": "s-chicken", "name": "Chicken", "price": 7.5, "img": "sandwich" },
+        { "id": "s-falafel", "name": "Falafel", "price": 6.5, "img": "sandwich" },
+        { "id": "s-escalope", "name": "Escalope", "price": 7.5, "img": "sandwich" },
+        { "id": "s-kefta", "name": "Kefta", "price": 7.5, "img": "sandwich" },
+        { "id": "s-cordon", "name": "Cordon bleu", "price": 7.5, "img": "sandwich" },
+        { "id": "s-tenders", "name": "Tenders", "price": 7.5, "img": "sandwich" },
+        { "id": "s-americain", "name": "Américain", "price": 7.5, "img": "sandwich" },
+        { "id": "s-galette", "name": "Galette", "price": 7.5, "img": "sandwich" }
+      ]
+    },
+    {
+      "id": "speciaux", "name": "Sandwichs spéciaux", "note": "Grandes faims · servis avec frites · menu + 1,50 €",
+      "opts": ["pain", "sauces", "menu"],
+      "items": [
+        { "id": "x-royal", "name": "Royal", "price": 9, "img": "royal", "desc": "2 viandes au choix, cheddar fondu.",
+          "extraOpts": [{ "use": "viandes", "type": "count", "label": "2 viandes au choix", "short": "Viandes", "total": 2 }] },
+        { "id": "x-s3", "name": "S3", "price": 8.5, "img": "s3", "desc": "3 steaks hachés, 3 cheddars fondus." },
+        { "id": "x-oriental", "name": "Oriental", "price": 9.5, "img": "oriental", "desc": "Kebab, merguez, cheddar fondu." },
+        { "id": "x-quattro", "name": "Quattro", "price": 9.5, "img": "quattro", "desc": "4 steaks hachés, 4 cheddars fondus." },
+        { "id": "x-big", "name": "Big Oriental", "price": 10.5, "img": "bigoriental", "desc": "Kefta, merguez, kebab, cheddar fondu." },
+        { "id": "x-magistral", "name": "Magistral", "price": 9, "img": "magistral", "desc": "Steak haché, bacon, œuf, cheddar fondu." },
+        { "id": "x-blinde", "name": "Blindé", "price": 9, "img": "blinde", "desc": "2 steaks hachés, cordon bleu, cheddar fondu." }
+      ]
+    },
+    {
+      "id": "four", "name": "Sandwichs au four", "note": "Servis avec frites · menu + 1,50 €",
+      "items": [
+        { "id": "f-four", "name": "Sandwich au four", "price": 8, "img": "four", "desc": "Viande au choix, gratiné au four.",
+          "opts": ["viandes",
+            { "type": "pick", "label": "Suppléments", "short": "Suppl.", "min": 0, "max": 2,
+              "choices": [{ "label": "Fromage", "price": 1.5 }, { "label": "Viande", "price": 2.5 }] },
+            "sauces", "menu"] }
+      ]
+    },
+    {
+      "id": "paninis", "name": "Paninis", "note": "Servis avec frites · menu + 1,50 €",
+      "items": [
+        { "id": "p-panini", "name": "Panini", "price": 7, "img": "panini", "desc": "Kebab, steak, poulet, tenders, merguez, chèvre-miel ou 3 fromages.",
+          "opts": [{ "type": "pick", "label": "Garniture", "short": "Garniture", "min": 1, "max": 1,
+            "choices": ["Kebab", "Steak", "Poulet", "Tenders", "Merguez", "Chèvre-miel", "3 fromages"] }, "menu"] }
+      ]
+    },
+    {
+      "id": "texmex", "name": "Tex-Mex", "note": "À la pièce ou en box",
+      "items": [
+        { "id": "t-tenders", "name": "Tenders", "img": "texmex",
+          "variants": { "label": "Quantité", "choices": [{ "id": "4", "label": "× 4", "price": 5 }, { "id": "7", "label": "× 7", "price": 8.5 }] } },
+        { "id": "t-wings", "name": "Wings", "img": "texmex",
+          "variants": { "label": "Quantité", "choices": [{ "id": "5", "label": "× 5", "price": 6 }, { "id": "8", "label": "× 8", "price": 9 }] } },
+        { "id": "t-nuggets", "name": "Nuggets", "img": "texmex",
+          "variants": { "label": "Quantité", "choices": [{ "id": "4", "label": "× 4", "price": 3.5 }, { "id": "7", "label": "× 7", "price": 6 }] } },
+        { "id": "t-box1", "name": "Box 1 · Tenders", "price": 9, "img": "texmex", "desc": "5 tenders, frites et boisson." },
+        { "id": "t-box2", "name": "Box 2 · Nuggets", "price": 9, "img": "texmex", "desc": "8 nuggets, frites et boisson." },
+        { "id": "t-box3", "name": "Box 3 · Wings", "price": 9, "img": "texmex", "desc": "5 wings, frites et boisson." },
+        { "id": "t-mixte", "name": "Box mixte", "price": 12, "img": "texmex", "desc": "8 pièces au choix, frites et boisson.",
+          "opts": [{ "type": "count", "label": "Compose ta box", "short": "Pièces", "total": 8, "choices": ["Tenders", "Wings", "Nuggets"] }] }
+      ]
+    },
+    {
+      "id": "assiettes", "name": "Assiettes", "note": "Servies avec riz · avec boisson + 1,50 €",
+      "items": [
+        { "id": "a-assiette", "name": "Assiette", "img": "assiette", "desc": "1, 2 ou 3 viandes au choix, servie avec riz.",
+          "variants": { "label": "Viandes", "choices": [
+            { "id": "1", "label": "1 viande", "price": 11.5 },
+            { "id": "2", "label": "2 viandes", "price": 12.5 },
+            { "id": "3", "label": "3 viandes", "price": 13.5 }
+          ]},
+          "opts": [{ "use": "viandes", "type": "count", "label": "Viandes", "short": "Viandes", "total": { "1": 1, "2": 2, "3": 3 } }, "sauces",
+            { "use": "menu", "label": "Avec une boisson", "short": "Avec boisson" }] }
+      ]
+    },
+    {
+      "id": "pizzas", "name": "Pizzas", "note": "Base tomate ou crème au choix",
+      "opts": ["base"],
+      "items": [
+        { "id": "z-margherita", "name": "Margherita", "price": 8.5, "img": "pizzaslice", "desc": "Mozzarella, basilic." },
+        { "id": "z-seven", "name": "Seven", "price": 10, "img": "pizza", "badge": "Maison", "desc": "Mozzarella, viande au choix, poivron, sauce fromagère après cuisson.",
+          "extraOpts": ["viandes"] },
+        { "id": "z-neptune", "name": "Neptune", "price": 10, "img": "pizza", "desc": "Mozzarella, thon, olives." },
+        { "id": "z-orientale", "name": "Orientale", "price": 10, "img": "pizza", "desc": "Mozzarella, merguez, poivrons, oignons." },
+        { "id": "z-indienne", "name": "Indienne", "price": 10, "img": "pizza", "desc": "Mozzarella, poulet curry, poivrons, oignons, sauce curry après cuisson." },
+        { "id": "z-mexicaine", "name": "Mexicaine", "price": 10, "img": "pizza", "desc": "Mozzarella, viande hachée, poivrons." },
+        { "id": "z-vege", "name": "Végétarienne", "price": 10, "img": "pizza", "desc": "Mozzarella, oignons, olives, poivrons." },
+        { "id": "z-calzone", "name": "Calzone", "price": 10, "img": "calzone", "desc": "Mozzarella, viande au choix, en chausson.", "extraOpts": ["viandes"] },
+        { "id": "z-bbq", "name": "Poulet BBQ", "price": 10, "img": "pizza", "desc": "Mozzarella, poulet, oignons, sauce BBQ après cuisson." },
+        { "id": "z-norvegienne", "name": "Norvégienne", "price": 11, "img": "pizza", "desc": "Mozzarella, saumon fumé." },
+        { "id": "z-kebab", "name": "Kebab", "price": 10, "img": "pizza", "desc": "Mozzarella, kebab, oignons, tomate, salade, sauce blanche après cuisson." },
+        { "id": "z-4fromages", "name": "4 Fromages", "price": 10, "img": "pizza", "desc": "Mozzarella, camembert, chèvre, raclette." },
+        { "id": "z-chevremiel", "name": "Chèvre Miel", "price": 10, "img": "pizzaslice", "desc": "Chèvre, miel après cuisson." }
+      ]
+    },
+    {
+      "id": "etudiant", "name": "Menus étudiant & kids", "note": "Frites et boisson comprises",
+      "items": [
+        { "id": "e-kids", "name": "Menu Kids", "price": 6, "img": "kids", "desc": "1 cheeseburger ou 5 nuggets, frites, Capri-Sun.",
+          "opts": [{ "type": "pick", "label": "Au choix", "short": "Choix", "min": 1, "max": 1, "preselect": true, "choices": ["Cheeseburger", "5 nuggets"] }] },
+        { "id": "e-sandwich", "name": "Menu étudiant Sandwich", "price": 7, "img": "sandwich", "desc": "Sandwich, frites et boisson.",
+          "opts": [{ "type": "pick", "label": "Sandwich", "short": "Sandwich", "min": 1, "max": 1,
+            "choices": ["Kebab", "Merguez", "Chicken", "Falafel", "Escalope", "Kefta", "Cordon bleu", "Tenders", "Américain", "Galette"] }, "pain", "sauces"] },
+        { "id": "e-tacos", "name": "Menu étudiant Tacos", "price": 8, "img": "tacos", "desc": "Tacos taille M (1 viande), frites et boisson.",
+          "opts": ["viandes", "sauces"] }
+      ]
+    },
+    {
+      "id": "frites", "name": "Frites", "note": "",
+      "items": [
+        { "id": "fr-frites", "name": "Frites", "img": "frites",
+          "variants": { "label": "Taille", "choices": [{ "id": "petite", "label": "Petite", "price": 3.5 }, { "id": "grande", "label": "Grande", "price": 5 }] } }
+      ]
+    }
+  ]
+}

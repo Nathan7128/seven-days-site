@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Days Clermont-Ferrand</title>
+<meta name="description" content="Seven Days, fast food halal au 6 rue d'Assas à Clermont-Ferrand : tacos lyonnais, crousty, burgers, sandwichs et pizzas. Commande en ligne, retrait au comptoir.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14110F">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:title" content="Seven Days · Fast food à Clermont-Ferrand">
+<meta property="og:description" content="Tacos lyonnais, crousty, burgers, pizzas. Commande en ligne, retrait rue d'Assas.">
+<meta property="og:type" content="restaurant">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Seven Days","servesCuisine":["Fast food","Tacos","Burgers","Pizzas"],"address":{"@type":"PostalAddress","streetAddress":"6 rue d'Assas","postalCode":"63000","addressLocality":"Clermont-Ferrand","addressCountry":"FR"},"telephone":"+33473938480","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Saturday","Sunday"],"opens":"11:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"15:00","closes":"23:59"}],"hasMenu":"#carte"}
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#accueil" aria-label="Seven Days, retour en haut"><img src="img/logo.png" alt="" width="44" height="44">Seven Days</a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#crousty" data-sec="crousty">Crousty</a>
+    <a href="#tacos" data-sec="tacos">Tacos</a>
+    <a href="#carte" data-sec="carte">La carte</a>
+    <a href="#infos" data-sec="infos">Infos</a>
+  </nav>
+  <button class="cart-btn" id="cartBtn" type="button" aria-label="Ouvrir le panier">Panier <span class="count" id="cartCount">0</span></button>
+</header>
+
+<nav class="dots" aria-label="Aller à la section">
+  <a href="#accueil" data-sec="accueil"><span>Accueil</span></a>
+  <a href="#crousty" data-sec="crousty"><span>Le Crousty</span></a>
+  <a href="#tacos" data-sec="tacos"><span>Tacos lyonnais</span></a>
+  <a href="#carte" data-sec="carte"><span>La carte</span></a>
+  <a href="#infos" data-sec="infos"><span>Horaires &amp; accès</span></a>
+</nav>
+
+<main>
+  <section id="accueil" class="snap hero" aria-label="Accueil">
+    <div class="hero-7" aria-hidden="true">7</div>
+    <div class="hero-copy">
+      <p class="status" id="status">Ouvert tous les jours</p>
+      <h1 class="wordmark"><span>Seven</span><span>Days</span></h1>
+      <p class="lede">Tacos lyonnais, crousty, burgers et pizzas. Halal, sur place ou à emporter, au 6 rue d'Assas à Clermont-Ferrand.</p>
+      <div class="ctas">
+        <a class="btn btn-red" href="#carte">Commander</a>
+        <a class="btn btn-ghost" href="#infos">Horaires &amp; accès</a>
+      </div>
+      <ul class="perks">
+        <li>Halal</li><li>Salle climatisée</li><li>Matchs diffusés</li><li>Depuis 2022</li>
+      </ul>
+    </div>
+    <figure class="hero-visual" aria-label="Tacos, pizza et burger du Seven Days">
+      <img class="h1" src="img/tacos.png" alt="" width="600" height="450" fetchpriority="high">
+      <img class="h2" src="img/pizza.png" alt="" width="600" height="450">
+      <img class="h3" src="img/doublecheese.png" alt="" width="600" height="450">
+      <img class="h-logo" src="img/logo.png" alt="Logo Seven Days : Fast Food, since 2022" width="429" height="429">
+      <span class="sticker">Nouveau<b>Pizzas</b>dès 8,50 €</span>
+    </figure>
+    <a class="cue" href="#crousty">Défiler</a>
+  </section>
+
+  <section id="crousty" class="snap sig" aria-labelledby="crousty-t">
+    <figure class="sig-visual"><img src="img/crousty.png" alt="" width="603" height="298" loading="lazy"></figure>
+    <div>
+      <p class="eyebrow">Nouveau · la signature</p>
+      <h2 class="big" id="crousty-t">Le Crousty</h2>
+      <p class="lede">Six couches, une barquette. Du riz chaud en bas, le croustillant en haut.</p>
+      <ol class="layers" aria-label="Composition, du haut vers le bas">
+        <li><span class="band"><i style="--w:34px;--c:#5E9E45"></i></span>Persil</li>
+        <li><span class="band"><i style="--w:50px;--c:#B5672F"></i></span>Oignons crispy</li>
+        <li><span class="band"><i style="--w:64px;--c:#E3051B"></i></span>Sauce chili-thaï</li>
+        <li><span class="band"><i style="--w:78px;--c:#D9893B"></i></span>Tenders</li>
+        <li><span class="band"><i style="--w:92px;--c:#F2C14E"></i></span>Sauce fromagère <small>maison</small></li>
+        <li><span class="band"><i style="--w:104px;--c:#F4EFE6"></i></span>Riz blanc</li>
+      </ol>
+      <div class="formats">
+        <button class="fmt" type="button" data-open="crousty" data-variant="moyen" data-direct="1"><span class="n">Moyen</span><span class="p">6,00 €</span><span class="plus" aria-hidden="true">+</span></button>
+        <button class="fmt" type="button" data-open="crousty" data-variant="grand" data-direct="1"><span class="n">Grand</span><span class="p">9,00 €</span><span class="plus" aria-hidden="true">+</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tacos" class="snap tac" aria-labelledby="tacos-t">
+    <figure class="tac-visual">
+      <img src="img/tacos.png" alt="Tacos lyonnais coupé, garni de poulet et de frites" width="520" height="330" loading="lazy">
+      <img class="gr" src="img/gratine.png" alt="" width="260" height="125" loading="lazy">
+      <figcaption>Gratiné dès 1,50 €</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">Le classique de la maison</p>
+      <h2 class="big" id="tacos-t">Tacos lyonnais</h2>
+      <p class="lede">Choisis ta taille, on s'occupe du reste. Servi avec frites, en menu pour 1,50 € de plus.</p>
+      <div class="sizes">
+        <button class="size" type="button" data-open="tacos" data-variant="M"><b>M</b><span>1 viande</span><em>8,50 €</em></button>
+        <button class="size" type="button" data-open="tacos" data-variant="L"><b>L</b><span>2 viandes</span><em>10,50 €</em></button>
+        <button class="size" type="button" data-open="tacos" data-variant="XL"><b>XL</b><span>3 viandes</span><em>12,50 €</em></button>
+        <button class="size" type="button" data-open="tacos" data-variant="XXL"><b>XXL</b><span>4 viandes</span><em>14,50 €</em></button>
+      </div>
+      <ol class="steps">
+        <li><div><b>Viandes</b><small>10 au choix, du kebab au cordon bleu</small></div></li>
+        <li><div><b>Sauces</b><small>11 au choix, samouraï comprise</small></div></li>
+        <li><div><b>Suppléments</b><small>Bacon, raclette, œuf… dès 1 €</small></div></li>
+        <li><div><b>Gratiné</b><small>De 1,50 € (M) à 2,50 € (XL et XXL)</small></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="carte" class="snap carte" aria-labelledby="carte-t">
+    <div class="carte-head">
+      <h2 class="big" id="carte-t">La carte</h2>
+      <p>Commande en ligne, retrait au comptoir.</p>
+    </div>
+    <div class="chips" id="chips" role="tablist" aria-label="Catégories"></div>
+    <div class="list" id="list" tabindex="-1">
+      <p class="carte-foot">Chargement de la carte…</p>
+    </div>
+  </section>
+
+  <section id="infos" class="snap infos" aria-labelledby="infos-t">
+    <header>
+      <p class="eyebrow">Passe nous voir</p>
+      <h2 class="big" id="infos-t">Horaires &amp; accès</h2>
+    </header>
+    <div class="ic ic-hours">
+      <h3>Horaires</h3>
+      <table class="hours" id="hours"><tbody></tbody></table>
+    </div>
+    <div class="ic ic-where">
+      <h3>Adresse</h3>
+      <p class="addr">6 rue d'Assas<span>63000 Clermont-Ferrand</span></p>
+      <ul class="chipset"><li>Sur place</li><li>À emporter</li><li>Halal</li><li>Salle climatisée</li><li>Matchs diffusés</li></ul>
+      <div class="where-actions">
+        <a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&amp;query=Seven%20Days%206%20rue%20d%27Assas%2063000%20Clermont-Ferrand" target="_blank" rel="noopener">Itinéraire</a>
+        <a class="btn btn-ghost" href="tel:+33473938480">Appeler · <span class="tel-num">04 73 93 84 80</span></a>
+      </div>
+    </div>
+    <div class="ic ic-social">
+      <h3>Suis-nous</h3>
+      <div class="socials">
+        <a class="soc" href="https://www.tiktok.com/" target="_blank" rel="noopener"><b>TikTok</b><span>@compte à confirmer</span></a>
+        <a class="soc" href="https://www.instagram.com/" target="_blank" rel="noopener"><b>Instagram</b><span>@compte à confirmer</span></a>
+        <a class="soc" href="https://www.facebook.com/" target="_blank" rel="noopener"><b>Facebook</b><span>Page à confirmer</span></a>
+      </div>
+    </div>
+    <div class="ic ic-deliv">
+      <h3>Livraison</h3>
+      <p>Tu préfères te faire livrer ? Seven Days est aussi sur Uber Eats.</p>
+      <a class="btn btn-ghost" href="https://www.ubereats.com/fr" target="_blank" rel="noopener">Commander sur Uber Eats</a>
+    </div>
+    <footer class="foot">
+      <span>© 2026 Seven Days · Fast food depuis 2022 · Clermont-Ferrand</span>
+      <a href="#infos">Mentions légales</a>
+      <a href="#infos">Confidentialité</a>
+      <span>Photos d'illustration. Allergènes : liste disponible au comptoir.</span>
+    </footer>
+  </section>
+</main>
+
+<div class="mbar"><button type="button" id="mbarBtn"><span id="mbarLabel">Commander</span><span class="tot" id="mbarTot" hidden></span></button></div>
+
+<dialog id="dlgItem" aria-label="Personnaliser le produit"></dialog>
+<dialog id="dlgCart" aria-label="Panier"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<noscript><p style="padding:100px 24px">Active JavaScript pour commander, ou appelle le 04 73 93 84 80.</p></noscript>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>

@@ -177,7 +177,9 @@ h1,h2,h3{text-wrap:balance}
 .socials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .soc{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:12px;background:var(--bg);border:1.5px solid var(--line);text-decoration:none;transition:border-color .15s}
 .soc:hover{border-color:var(--red)}
-.soc b{font:400 1.6rem/1 var(--display);letter-spacing:.04em}
+.soc b{font:400 1.6rem/1 var(--display);letter-spacing:.04em;display:flex;align-items:center;gap:.4em}
+.soc b svg{flex:none;width:.85em;height:.85em;transition:color .15s}
+.soc:hover b svg{color:var(--red)}
 .soc span{color:var(--muted);font-size:.85rem}
 .ic-deliv p{margin:0 0 16px;color:var(--muted)}
 .foot{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px 22px;color:var(--muted);font-size:.85rem;padding-top:8px}

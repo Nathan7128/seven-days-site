@@ -12,7 +12,7 @@ seven-days-site/
 │  ├─ css/style.css         ← apparence (couleurs et polices en haut, dans :root)
 │  ├─ js/app.js             ← horaires, carte, personnalisation, panier, commande
 │  ├─ menu.json             ← LA CARTE : produits, prix, options
-│  ├─ img/                  ← logo, photos produits (WebP), favicon
+│  ├─ img/                  ← logo, photos produits (png), favicon
 │  └─ _headers              ← cache des images, en-têtes de sécurité
 ├─ wrangler.jsonc           ← configuration Cloudflare
 ├─ .gitignore
@@ -25,11 +25,11 @@ seven-days-site/
 |----------------------------------|------------------------|---------|
 | Changer un prix                  | `public/menu.json`     | Modifier le nombre après `"price"` (7.5 = 7,50 €) |
 | Ajouter / retirer un produit     | `public/menu.json`     | Copier ou supprimer un bloc `{ "id": … }` |
-| Remplacer une photo              | `public/img/`          | Même nom de fichier, format WebP, ~800 px de large |
+| Remplacer une photo              | `public/img/`          | Même nom de fichier, format png, ~800 px de large |
 | Changer les horaires             | `public/js/app.js`     | Constante `HOURS` en haut du fichier, et le tableau `openingHoursSpecification` dans `index.html` |
 | Changer un texte                 | `public/index.html`    | |
 
-Chaque modification poussée sur la branche `main` est mise en ligne en 1 à 2 minutes.
+Chaque modification poussée sur la branche `master` est mise en ligne en 1 à 2 minutes.
 
 ## Tester sur son PC
 
